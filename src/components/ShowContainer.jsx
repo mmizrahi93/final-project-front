@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Axios from "axios";
 
 const baseURL = 'http://localhost:5000/api/v1/';
 
@@ -8,11 +9,44 @@ export default class ShowContainer extends Component {
         this.state = {
             shows: [],
             showForm: false,
-            name: '',
-            type: '',
-            category: '',
-            where: ''
+            name: this.props.show.name,
+            type: this.props.show.type,
+            category: this.props.show.category,
+            where: this.props.show.where
         }
+        this.toggleEdit = this.toggleEdit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    toggleEdit = () => {
+        this.setState(
+            { showForm: !this.state.showForm},   
+        );
+    }
+
+    handleChange (event) {
+        this.setState({ [event.currentTarget.id]: event.currentTarget.value})
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        fetch(baseURL + 'shows/', {
+          method: 'POST',
+          body: JSON.stringify({name: this.state.name, type: this.state.type, category: this.state.category, where: this.state.where}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json())
+          .then(resJson => {
+            this.props.getShow()
+            this.setState({
+              name: '',
+              type: '',
+              category: '',
+              where: '',
+            })
+          }).catch(error => console.log({'Error': error}))
     }
 
     deleteShow(id) {
@@ -29,6 +63,38 @@ export default class ShowContainer extends Component {
         })
     }
 
+    handleUpdateShow = async (event) => {
+        event.preventDefault()
+        const payLoad = {
+          name: this.state.name,
+          type: this.state.type,
+          category: this.state.category,
+          where: this.state.where
+        };
+        const headers = {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        };
+        const showId = this.props.show.id;
+        console.log(showId)
+        await Axios.put(baseURL + `shows/${showId}`, payLoad, { headers: headers })
+        .then(
+          (res) => {
+            console.log(res);
+          }
+        )
+        .then(resJson => {
+            this.props.getShow()
+            this.toggleEdit()
+            this.setState({
+              name: '',
+              type: '',
+              category: '',
+              where: ''
+            })
+        })
+    };
+
     render() {
         return (
             <div className='posts'>
@@ -37,7 +103,20 @@ export default class ShowContainer extends Component {
                 <h3>Category: {this.props.show.category}</h3>
                 <h3>Streaming App On: {this.props.show.where}</h3>
                 <button onClick={() => this.deleteShow(this.props.show.id)}>&#128465;</button>
-                <button>Update</button>
+                <button onClick={this.toggleEdit}>Update</button>
+                { this.state.showForm &&
+                    <form onSubmit={this.handleUpdateShow}>
+                        <label htmlFor="name"></label>
+                        <input type="text" id="name" name="name" onChange={this.handleChange} defaultValue={this.props.show.name}/>
+                        <label htmlFor="type"></label>
+                        <input type="text" id="type" name="type" onChange={this.handleChange} defaultValue={this.props.show.type}/>
+                        <label htmlFor="category"></label>
+                        <input type="text" id="category" name="category" onChange={this.handleChange} defaultValue={this.props.show.category} />
+                        <label htmlFor="where"></label>
+                        <input type="text" id="where" name="where" onChange={this.handleChange} defaultValue={this.props.show.where} />
+                        <input type="submit" value="Update Show"/>
+                    </form>
+                }
             </div>
         )
     }
