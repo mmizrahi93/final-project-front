@@ -31,12 +31,13 @@ export default class ShowContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className='posts'>
                 <h3>Name: {this.props.show.name}</h3>
                 <h3>Type: {this.props.show.type}</h3>
                 <h3>Category: {this.props.show.category}</h3>
                 <h3>Streaming App On: {this.props.show.where}</h3>
-                <button onClick={() => this.deleteShow(this.props.show.id)}>Delete</button>
+                <button onClick={() => this.deleteShow(this.props.show.id)}>&#128465;</button>
+                <button>Update</button>
             </div>
         )
     }

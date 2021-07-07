@@ -44,12 +44,16 @@ export default class App extends Component {
     return (
       <div>
         <h1>Welcome to NextFlick</h1>
-        <NewForm getShow={this.getShow} handleAddShow={this.handleAddShow}/>
-        {
-          this.state.shows.map(show => {
-          return <ShowContainer getShow={this.getShow} allShows={this.state.shows} show={show} key={show.id}/>
-          })
-        }
+        <div className='newform'>
+          <NewForm getShow={this.getShow} handleAddShow={this.handleAddShow}/>
+        </div>
+        <div className='allshows'>
+          {
+            this.state.shows.map(show => {
+            return <ShowContainer getShow={this.getShow} allShows={this.state.shows} show={show} key={show.id}/>
+            })
+          }
+        </div>
       </div>
     )
   }
