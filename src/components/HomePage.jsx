@@ -5,10 +5,10 @@ import ShowContainer from './ShowContainer';
 // const baseURL = 'http://localhost:5000/api/v1/';
 let baseURL;
 
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:5000/api/v1/';
-} else {
+if (process.env.NODE_ENV === 'production') {
   baseURL = 'https://next-flick.herokuapp.com/';
+} else {
+  baseURL = 'http://localhost:5000/api/v1/';
 };
 console.log(process.env.NODE_ENV)
 console.log(baseURL)
