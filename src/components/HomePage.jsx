@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   baseURL = 'https://next-flick.herokuapp.com/';
 };
-
+console.log(process.env.NODE_ENV)
 console.log(baseURL)
 
 export default class HomePage extends Component {
