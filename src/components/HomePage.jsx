@@ -11,6 +11,8 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = 'https://next-flick.herokuapp.com/';
 };
 
+console.log(baseURL)
+
 export default class HomePage extends Component {
     constructor(props) {
         super(props)
