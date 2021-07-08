@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NewForm from './NewForm'
 import ShowContainer from './ShowContainer';
 
-const baseURL = 'https://next-flick.herokuapp.com/';
+const baseURL = 'https://next-flick.herokuapp.com/api/v1/';
 // const baseURL = 'http://localhost:5000/api/v1/';
 // let baseURL;
 
