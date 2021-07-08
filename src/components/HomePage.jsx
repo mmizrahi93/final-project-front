@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import NewForm from './NewForm'
 import ShowContainer from './ShowContainer';
 
+const baseURL = 'https://next-flick.herokuapp.com/';
 // const baseURL = 'http://localhost:5000/api/v1/';
-let baseURL;
+// let baseURL;
 
-if (process.env.NODE_ENV === 'production') {
-  baseURL = 'https://next-flick.herokuapp.com/';
-} else {
-  baseURL = 'http://localhost:5000/api/v1/';
-};
-console.log(process.env.NODE_ENV)
-console.log(baseURL)
+// if (process.env.NODE_ENV === 'production') {
+//   baseURL = 'https://next-flick.herokuapp.com/';
+// } else {
+//   baseURL = 'http://localhost:5000/api/v1/';
+// };
+// console.log(process.env.NODE_ENV)
+// console.log(baseURL)
 
 export default class HomePage extends Component {
     constructor(props) {
