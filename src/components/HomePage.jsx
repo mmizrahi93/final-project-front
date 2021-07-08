@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 import NewForm from './NewForm'
 import ShowContainer from './ShowContainer';
 
-const baseURL = 'http://localhost:5000/api/v1/';
+// const baseURL = 'http://localhost:5000/api/v1/';
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://next-flick.herokuapp.com/';
+};
 
 export default class HomePage extends Component {
     constructor(props) {
