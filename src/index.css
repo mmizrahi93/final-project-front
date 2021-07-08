@@ -33,6 +33,36 @@ body {
   margin: 25px;
 }
 
+.navbar {
+  background-image: linear-gradient(rgb(141, 99, 99), rgb(202, 199, 199)) ;
+  width: 100%;
+  
+}
+
+#root {
+  width: 100%;
+}
+
+.navbuttons {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+a {
+  text-decoration: none;
+  margin: 5px;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

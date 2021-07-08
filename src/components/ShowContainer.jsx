@@ -12,7 +12,9 @@ export default class ShowContainer extends Component {
             name: this.props.show.name,
             type: this.props.show.type,
             category: this.props.show.category,
-            where: this.props.show.where
+            where: this.props.show.where,
+            likes: 0,
+            dislikes: 0,
         }
         this.toggleEdit = this.toggleEdit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -95,6 +97,16 @@ export default class ShowContainer extends Component {
         })
     };
 
+    toggleAddLike() {
+      const addLike = this.state.likes + 1;
+      this.setState({ likes: addLike });
+    }
+
+    toggleAddDislike() {
+      const addDislike = this.state.dislikes + 1;
+      this.setState({ dislikes: addDislike });
+    }
+
     render() {
         return (
             <div className='posts'>
@@ -103,7 +115,9 @@ export default class ShowContainer extends Component {
                 <h3>Category: {this.props.show.category}</h3>
                 <h3>Streaming App On: {this.props.show.where}</h3>
                 <button onClick={() => this.deleteShow(this.props.show.id)}>&#128465;</button>
-                <button onClick={this.toggleEdit}>Update</button>
+                <button onClick={this.toggleEdit}>&#9997;</button>
+                <button onClick={() => this.toggleAddLike(this.props.show.id)}> &#128077; {this.state.likes}</button>
+                <button onClick={() => this.toggleAddDislike(this.props.show.id)}>&#128078; {this.state.dislikes}</button>
                 { this.state.showForm &&
                     <form onSubmit={this.handleUpdateShow}>
                         <label htmlFor="name"></label>
@@ -117,6 +131,7 @@ export default class ShowContainer extends Component {
                         <input type="submit" value="Update Show"/>
                     </form>
                 }
+                
             </div>
         )
     }
