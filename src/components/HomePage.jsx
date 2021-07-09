@@ -54,7 +54,7 @@ export default class HomePage extends Component {
         const {isLightTheme, light, dark} = this.context;
         const theme = isLightTheme ? light : dark;
         return (
-            <div style={{background: theme.ui, color: theme.syntax}}>
+            <div style={{background: theme.background, color: theme.text}}>
             <div className='newform' >
             <NewForm getShow={this.getShow} handleAddShow={this.handleAddShow}/>
             <ThemeToggle />
