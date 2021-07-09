@@ -21,23 +21,6 @@ export default class ShowContainer extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidMount() {
-      this.setUpState()
-    }
-
-    setUpState=() => {
-      let name = this.props.show.name
-      let type = this.props.show.type
-      let category = this.props.show.category
-      let where = this.props.show.where
-      this.setState({
-        name: name,
-        type: type,
-        category: category,
-        where: where
-      })
-    }
-
     toggleEdit = () => {
         this.setState(
             { showForm: !this.state.showForm},   
@@ -106,10 +89,10 @@ export default class ShowContainer extends Component {
             this.props.getShow()
             this.toggleEdit()
             this.setState({
-              name: '',
-              type: '',
-              category: '',
-              where: ''
+              name: this.props.show.name,
+              type: this.props.show.type,
+              category: this.props.show.category,
+              where: this.props.show.where
             })
         })
     };
