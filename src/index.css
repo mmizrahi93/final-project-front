@@ -3,11 +3,6 @@ HTML {
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: rgb(141, 99, 99);
   text-align: center;
   display: flex;
@@ -24,11 +19,11 @@ body {
 }
 
 .posts {
-  background-color: rgb(202, 199, 199);
+  background-color: rgb(155, 151, 151);
   height: 230px;
   width: 350px;
   border-radius: 8%;
-  box-shadow: black 8px 0px 8px;
+  box-shadow: rgb(100, 100, 100) 8px 0px 8px;
   text-align: center;
   margin: 25px;
 }
@@ -36,7 +31,6 @@ body {
 .navbar {
   background-image: linear-gradient(rgb(141, 99, 99), rgb(202, 199, 199)) ;
   width: 100%;
-  
 }
 
 #root {
@@ -63,7 +57,10 @@ img {
   width: 250px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.themecolor {
+  border-radius: 10px;
+}
+
+.themecolor:hover {
+  box-shadow: rgb(100, 100, 100) 8px 0px 8px;
 }
