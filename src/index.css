@@ -9,10 +9,6 @@ body {
   width: 100%;
 }
 
-.newform {
-  margin: 10px;
-}
-
 .allshows {
   display: flex;
   flex-flow: row wrap;
@@ -29,8 +25,11 @@ body {
 }
 
 .navbar {
-  background-image: linear-gradient(rgb(141, 99, 99), rgb(202, 199, 199)) ;
+  background-image: linear-gradient(rgb(141, 99, 99), #ddd) ;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #root {
@@ -39,7 +38,6 @@ body {
 
 .navbuttons {
   display: flex;
-  flex-flow: row wrap;
 }
 
 a {

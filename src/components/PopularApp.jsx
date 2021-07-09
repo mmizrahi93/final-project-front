@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import ThemeToggle from './ThemeToggle';
+import { ThemeColor } from '../context/ThemeColor';
 
 export default class PopularApp extends Component {
+    static contextType = ThemeColor
     render() {
+        const {isLightTheme, light, dark} = this.context;
+        const theme = isLightTheme ? light : dark;
         return (
-            <div>
+            <div style={{background: theme.background, color: theme.text}}>
+                <ThemeToggle />
                 <h3>Popular Streaming Apps Used</h3>
                 <h4>Click on the Logos to Login or Signup</h4>
                 <a href="https://www.netflix.com/"><img src="https://assets.brand.microsites.netflix.io/assets/493f5bba-81a4-11e9-bf79-066b49664af6_cm_1440w.png?v=8" alt="Netflix"></img></a>

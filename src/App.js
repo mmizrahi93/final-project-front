@@ -7,17 +7,17 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      shows: [],
-      name: '',
-      type: '',
-      category: '',
-      where: '',
-    }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     shows: [],
+  //     name: '',
+  //     type: '',
+  //     category: '',
+  //     where: '',
+  //   }
     
-  }
+  // }
 
   render() {
     return (
