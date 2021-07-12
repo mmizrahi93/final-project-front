@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
 import NewForm from './NewForm'
 import ShowContainer from './ShowContainer';
+import ThemeToggle from './ThemeToggle';
+import { ThemeColor } from '../context/ThemeColor';
 
 const baseURL = 'https://next-flick.herokuapp.com/api/v1/';
-// const baseURL = 'http://localhost:5000/api/v1/';
-// let baseURL;
-
-// if (process.env.NODE_ENV === 'production') {
-//   baseURL = 'https://next-flick.herokuapp.com/';
-// } else {
-//   baseURL = 'http://localhost:5000/api/v1/';
-// };
-// console.log(process.env.NODE_ENV)
-// console.log(baseURL)
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -57,12 +49,15 @@ export default class HomePage extends Component {
           where: '', 
         })
     }
-
+    static contextType = ThemeColor
     render() {
+        const {isLightTheme, light, dark} = this.context;
+        const theme = isLightTheme ? light : dark;
         return (
-            <div>
-            <div className='newform'>
+            <div style={{background: theme.background, color: theme.text}}>
+            <div className='newform' >
             <NewForm getShow={this.getShow} handleAddShow={this.handleAddShow}/>
+            <ThemeToggle />
             </div>
             <div className='allshows'>
             {
