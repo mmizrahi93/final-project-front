@@ -1,8 +1,7 @@
 import React, {createContext, Component} from 'react';
 
-
+// https://www.youtube.com/watch?v=CGRpfIUURE0 this video helped me with reat context
 export const ThemeColor = createContext();
-
 
 export default class ThemeColorProvider extends Component {
     state = {
