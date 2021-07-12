@@ -45,14 +45,14 @@ export default class NewForm extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Show Name:"/>
+                    <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Show Name"/>
                     <label htmlFor="type"></label>
-                    <input type="text" id="type" name="type" onChange={this.handleChange} value={this.state.type} placeholder="TV Show/ Documentary"/>
+                    <input type="text" id="type" name="type" onChange={this.handleChange} value={this.state.type} placeholder="TV Show / Documentary"/>
                     <label htmlFor="category"></label>
-                    <input type="text" id="category" name="category" onChange={this.handleChange} value={this.state.category}placeholder="Add a Category:"/>
+                    <input type="text" id="category" name="category" onChange={this.handleChange} value={this.state.category}placeholder="Add a Category"/>
                     <label htmlFor="where"></label>
-                    <input type="text" id="where" name="where" onChange={this.handleChange} value={this.state.where} placeholder="What Streaming app:"/>
-                    <input type="submit" value="Add a Show"/>
+                    <input type="text" id="where" name="where" onChange={this.handleChange} value={this.state.where} placeholder="On What Streaming app"/>
+                    <input className='button' type="submit" value="Add a Show"/>
                 </form>
             </div>
         )

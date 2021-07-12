@@ -129,7 +129,7 @@ export default class ShowContainer extends Component {
                         <input type="text" id="category" name="category" onChange={this.handleChange} defaultValue={this.props.show.category} />
                         <label htmlFor="where"></label>
                         <input type="text" id="where" name="where" onChange={this.handleChange} defaultValue={this.props.show.where} />
-                        <input type="submit" value="Update Show"/>
+                        <input className='button' type="submit" value="Update Show"/>
                     </form>
                 }
                 

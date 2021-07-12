@@ -62,3 +62,11 @@ img {
 .themecolor:hover {
   box-shadow: rgb(100, 100, 100) 8px 0px 8px;
 }
+
+.button {
+  border-radius: 10px;
+}
+
+.button:hover {
+  box-shadow: rgb(100, 100, 100) 8px 0px 8px;
+}
