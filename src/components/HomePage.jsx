@@ -27,12 +27,9 @@ export default class HomePage extends Component {
     getShow() {
         fetch(baseURL + 'shows/')
           .then(data => { 
-            
               return data.json()}, 
               err => console.log(err),
-              
           )
-          
           .then(parsedData => {
             console.log(parsedData)
               this.setState({shows: parsedData.data})}, err => console.log(err))
