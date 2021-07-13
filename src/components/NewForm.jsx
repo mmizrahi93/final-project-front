@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-// const baseURL = 'http://localhost:5000/api/v1/';
 const baseURL = 'https://next-flick.herokuapp.com/api/v1/';
 
 export default class NewForm extends Component {

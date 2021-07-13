@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Axios from "axios";
 
-
 const baseURL = 'https://next-flick.herokuapp.com/api/v1/';
 
 export default class ShowContainer extends Component {
