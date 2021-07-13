@@ -14,3 +14,4 @@ Used React, React Router, React Context, and Heroku.  Connecting to a Flask back
 
 Add a chart that populates the number of shows recommended for each streaming app.  
 Add a CSS framework.
+Add a comment section.
