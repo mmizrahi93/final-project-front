@@ -8,8 +8,8 @@ Used React, React Router, React Context, and Heroku.  Connecting to me Flask bac
 
 <h2>App Link</h2>
 
-https://enigmatic-bayou-89258.herokuapp.com/ 
-
+[NextFlick](https://enigmatic-bayou-89258.herokuapp.com/)
+ 
 <h2>Future Improvements</h2>
 
 Add a chart that populates the number of shows recommended for each streaming app.  
