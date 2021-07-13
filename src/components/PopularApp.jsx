@@ -18,6 +18,8 @@ export default class PopularApp extends Component {
                 <a href="https://www.disneyplus.com/"><img src="https://media.comicbook.com/2018/11/disney-plus-logo-1143358.jpeg" alt="DisneyPlus"></img></a>
                 <a href="https://www.hulu.com/welcome"><img src="https://media.comicbook.com/2019/11/hulu-logo-1197973-1280x0.jpeg" alt="Hulu"></img></a>
                 <a href="https://www.peacocktv.com/"><img src="https://www.newscaststudio.com/wp-content/uploads/2019/09/peacock-logo.jpg" alt="Peacock"></img></a>
+                <a href="https://www.starz.com/us/en/"><img src="https://www.soda.com/wp-content/uploads/2020/03/starz.jpg" alt="Starz"></img></a>
+                <a href="https://tv.apple.com/"><img src="https://www.apple.com/v/apple-tv-plus/t/images/meta/og__bgttn9piew1u.png?202107010834" alt="Starz"></img></a>
             </div>
         )
     }
