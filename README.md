@@ -4,7 +4,7 @@ React Front End
 
 <h2>Overview</h2>
 
-Used React, React Router, React Context, and Heroku.  People can go on this app to either recommend a show or documentary or find their next one to watch.  
+Used React, React Router, React Context, and Heroku.  Connecting to me Flask backend. People can go on this app to either recommend a show or documentary or find their next one to watch.  
 
 <h2>App Link</h2>
 
